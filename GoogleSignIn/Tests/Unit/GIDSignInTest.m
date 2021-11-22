@@ -363,6 +363,8 @@ static void *kTestObserverContext = &kTestObserverContext;
   [_authState verify];
   [_tokenResponse verify];
   XCTAssertEqual(_signIn.currentUser.userID, kFakeGaiaID);
+
+  [idTokenDecoded stopMocking];
 }
 
 - (void)testRestoredPreviousSignInNoRefresh_hasNoPreviousUser {

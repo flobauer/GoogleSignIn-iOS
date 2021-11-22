@@ -31,6 +31,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// Whether the sign-in is a continuation of the previous one.
 @property(nonatomic, readonly) BOOL continuation;
 
+/// Whether the sign-in is a add scopes flow. NO means it is a sign in flow.
+@property(nonatomic, readonly) BOOL addScopeFlow;
+
 /// The extra parameters used in the sign-in URL.
 @property(nonatomic, readonly, nullable) NSDictionary *extraParams;
 
@@ -54,6 +57,7 @@ NS_ASSUME_NONNULL_BEGIN
                        presentingViewController:
                            (nullable UIViewController *)presentingViewController
                                       loginHint:(nullable NSString *)loginHint
+                                   addScopeFlow:(BOOL)addScopeFlow
                                        callback:(GIDSignInCallback)callback;
 
 /// Creates the options to sign in silently.
