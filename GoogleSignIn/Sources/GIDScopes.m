@@ -65,15 +65,6 @@ static NSArray *addScopeTo(NSArray *originalScopes,
   return addScopeTo(scopes, hasProfile, kProfileScope);
 }
 
-+ (BOOL)containAdditionalScopes:(NSArray *)scopes {
-  for (NSString *scope in scopes) {
-    if (!hasEmail(scope) && !hasProfile(scope) && !hasOpenID(scope)) {
-      return YES;
-    }
-  }
-  return NO;
-}
-
 @end
 
 NS_ASSUME_NONNULL_END
