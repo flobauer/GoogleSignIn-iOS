@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
                            (nullable UIViewController *)presentingViewController
                                       loginHint:(nullable NSString *)loginHint
                                    addScopeFlow:(BOOL)addScopeFlow
-                                       callback:(GIDSignInCallback)callback {
+                                       callback:(nullable GIDSignInCallback)callback {
   GIDSignInInternalOptions *options = [[GIDSignInInternalOptions alloc] init];
   if (options) {
     options->_interactive = YES;

@@ -58,7 +58,7 @@ NS_ASSUME_NONNULL_BEGIN
                            (nullable UIViewController *)presentingViewController
                                       loginHint:(nullable NSString *)loginHint
                                    addScopeFlow:(BOOL)addScopeFlow
-                                       callback:(GIDSignInCallback)callback;
+                                       callback:(nullable GIDSignInCallback)callback;
 
 /// Creates the options to sign in silently.
 + (instancetype)silentOptionsWithCallback:(GIDSignInCallback)callback;
