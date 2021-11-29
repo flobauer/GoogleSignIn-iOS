@@ -124,6 +124,7 @@ typedef void (^GIDDisconnectCallback)(NSError *_Nullable error);
 - (void)signInWithConfiguration:(GIDConfiguration *)configuration
        presentingViewController:(UIViewController *)presentingViewController
                            hint:(nullable NSString *)hint
+                          scopes:(nullable NSArray *)scopes
                        callback:(nullable GIDSignInCallback)callback;
 
 /// Starts an interactive consent flow to add scopes to the current user's grants.

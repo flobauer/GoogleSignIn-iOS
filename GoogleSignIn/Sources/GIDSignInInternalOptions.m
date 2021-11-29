@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
                        presentingViewController:
                            (nullable UIViewController *)presentingViewController
                                       loginHint:(nullable NSString *)loginHint
+                                        scopes:(nullable NSArray *)scopes
                                        callback:(GIDSignInCallback)callback {
   GIDSignInInternalOptions *options = [[GIDSignInInternalOptions alloc] init];
   if (options) {
@@ -33,10 +34,23 @@ NS_ASSUME_NONNULL_BEGIN
     options->_presentingViewController = presentingViewController;
     options->_loginHint = loginHint;
     options->_callback = callback;
-    options->_scopes = [GIDScopes scopesWithBasicProfile:@[]];
+    options->_scopes = [GIDScopes scopesWithBasicProfile:scopes];
   }
   return options;
 }
+
++ (instancetype)defaultOptionsWithConfiguration:(nullable GIDConfiguration *)configuration
+                        presentingViewController:(nullable UIViewController *)presentingViewController
+                                       loginHint:(nullable NSString *)loginHint
+                                        callback:(GIDSignInCallback)callback {
+     GIDSignInInternalOptions *options = [self defaultOptionsWithConfiguration:configuration
+                                                      presentingViewController:presentingViewController
+                                                                     loginHint:loginHint
+                                                                        scopes:@[]
+                                                                      callback:callback];
+   return options;
+ }
+
 
 + (instancetype)silentOptionsWithCallback:(GIDSignInCallback)callback {
   GIDSignInInternalOptions *options = [self defaultOptionsWithConfiguration:nil

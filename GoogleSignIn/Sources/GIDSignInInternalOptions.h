@@ -54,6 +54,7 @@ NS_ASSUME_NONNULL_BEGIN
                        presentingViewController:
                            (nullable UIViewController *)presentingViewController
                                       loginHint:(nullable NSString *)loginHint
+                                        scopes:(nullable NSArray *)scopes
                                        callback:(GIDSignInCallback)callback;
 
 /// Creates the options to sign in silently.
