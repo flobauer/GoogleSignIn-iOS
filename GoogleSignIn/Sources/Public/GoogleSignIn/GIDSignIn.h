@@ -104,6 +104,7 @@ typedef void (^GIDDisconnectCallback)(NSError *_Nullable error);
 ///     called asynchronously on the main queue.
 - (void)signInWithConfiguration:(GIDConfiguration *)configuration
        presentingViewController:(UIViewController *)presentingViewController
+                        scopes:(nullable NSArray *)scopes
                        callback:(nullable GIDSignInCallback)callback;
 
 /// Starts an interactive sign-in flow using the provided configuration and a login hint.
