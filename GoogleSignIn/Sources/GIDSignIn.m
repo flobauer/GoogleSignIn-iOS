@@ -225,7 +225,7 @@ static const NSTimeInterval kMinimumRestoredAccessTokenTimeToExpire = 600.0;
   [self signInWithConfiguration:configuration
        presentingViewController:presentingViewController
                            hint:nil
-                          scopes:(nullable NSArray *)scopes
+                          scopes:scopes
                        callback:callback];
 }
 
@@ -255,6 +255,7 @@ static const NSTimeInterval kMinimumRestoredAccessTokenTimeToExpire = 600.0;
       [GIDSignInInternalOptions defaultOptionsWithConfiguration:configuration
                                        presentingViewController:presentingViewController
                                                       loginHint:self.currentUser.profile.email
+                                                        scopes:self.currentUser.grantedScopes
                                                        callback:callback];
 
   NSSet<NSString *> *requestedScopes = [NSSet setWithArray:scopes];
